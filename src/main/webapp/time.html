@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Time</title>
+    <script>
+        function getTime() {
+            var xhr = new XMLHttpRequest();
+            var url = "TimeServlet";
+            xhr.open("GET",url, false);
+            xhr.send();
+            var result = xhr.responseText;
+            //alert(result);
+            document.getElementById("info").innerText = result;
+        }
+    </script>
+</head>
+<body>
+    <button onclick="getTime();">What is time?</button>
+    <h1 id="info"></h1>
+</body>
+</html>
